@@ -5,8 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "build-client": "vue-cli-service build",
-    "build-server": "cross-env WEBPACK_TARGET=node vue-cli-service build --mode server",
+    "build:client": "vue-cli-service build",
+    "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build --mode server",
     "build": "npm run build:server && npm run build:client"
   },
   "dependencies": {

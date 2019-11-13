@@ -10,7 +10,7 @@ module.exports = {
     extract: false
   },
   outputDir: './dist/' + target,
-  configurewebpack: () => ({
+  configureWebpack: () => ({
     entry: `./src/entry/entry-${target}.js`,
     devtool: 'source-map',
     target: TARGET_NODE ? "node" : "web",
@@ -26,7 +26,7 @@ module.exports = {
     },
     plugins: [TARGET_NODE ? new VueSSRServerPlugin() : new VueSSRClientPlugin()]
   }),
-  chainwebpack: config => {
+  chainWebpack: config => {
     config.module.rule('vue').use('vue-loader').tap(options => {
       merge(options, {
         optimizeSSR: false
